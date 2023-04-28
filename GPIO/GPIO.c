@@ -1,6 +1,4 @@
 #include "GPIO.h"
-#include "stdint.h"
-#include "tm4c123gh6pm.h"
 
 
 void RGBInit (void){
@@ -17,7 +15,11 @@ void RGBInit (void){
 				GPIO_PORTF_DATA_R &= ~0x0E;
 		}
 
-void rgb_color (uint8_t color){
-    GPIO_PORTF_DATA_R &= ~0x0E;
-    GPIO_PORTF_DATA_R |= color;
+void RGBset(uint8_t color){
+	GPIO_PORTF_DATA_R = color;
 }
+
+void RGBclear(){
+	GPIO_PORTF_DATA_R = 0;
+}
+

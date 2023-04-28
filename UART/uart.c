@@ -1,7 +1,5 @@
 #include "uart.h"
-#include "tm4c123gh6pm.h"
-#include "stdint.h"
-#include "string.h"
+
 #define maxlen 83
 
 
