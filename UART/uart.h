@@ -5,13 +5,13 @@
 #include "stdint.h"
 #include "string.h"
 
-void UART1Init();
-void UART0Init();
+void UART1Init(void);
+void UART0Init(void);
 uint8_t UART1_AVAILABLE(void);
 uint8_t UART1_read(void);
-void UART1_write(uint8_t c);
-void UART1_readstr(uint8_t *str);
-void UART1_writestr(uint8_t *str);
+void UART1_write(char c);
+void UART1_readstr(char* str);
+void UART1_writestr(char* str);
 
 
 

@@ -1,9 +1,5 @@
-#include "tm4c123gh6pm.h"
-#include "stdint.h"
-#include "string.h"
-#include "systick.h"
-#include "stdio.h"
 #include "LCD.h"
+
 /*
 * USE PORT B FOR THE LCD 
 * RS WILL BE ASSOCIATED TO PB0
@@ -13,8 +9,7 @@
 * DB4->DB7 -----> PB4->PB7
 */
 
-void SystemInit(){}
-void portbinit(void)
+void portBinit(void)
 {
 	SYSCTL_RCGCGPIO_R = SYSCTL_RCGCGPIO_R1;
 	while ((SYSCTL_PRGPIO_R & SYSCTL_RCGCGPIO_R1 ) == 0) {};
@@ -29,7 +24,7 @@ void portbinit(void)
 }
 void LCD_init(void)
 {
-	portbinit();
+	portBinit();
 	LCD_CMD(0X03);
 	delay_IN_ms(5);
 	LCD_CMD(0X03);
@@ -72,6 +67,10 @@ void GPIO_BITS_CLEAR(void)
 	//CLEARS DATA ON THE DATA BUS OF THE LCD
 	GPIO_PORTB_DATA_R &= 0X0F;
 }
+
+uint8_t UP;
+uint8_t LOW;
+
 void split(uint8_t BITS)
 {
 	// BREAK THE DATA INTO 2 NIBBLES 4 BITS EACH 

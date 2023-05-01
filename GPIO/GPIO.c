@@ -19,7 +19,7 @@ void RGBset(uint8_t color){
 	GPIO_PORTF_DATA_R = color;
 }
 
-void RGBclear(){
+void RGBclear(void){
 	GPIO_PORTF_DATA_R = 0;
 }
 
