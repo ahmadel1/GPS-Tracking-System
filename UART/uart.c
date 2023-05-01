@@ -3,7 +3,7 @@
 #define maxlen 83
 
 
-void UART0Init(){
+void UART0Init(void){
 	SYSCTL_RCGCUART_R |= 0x01;
 	SYSCTL_RCGCGPIO_R |= 0x01;
 	
@@ -18,7 +18,7 @@ void UART0Init(){
 	GPIO_PORTA_DEN_R |= 0X03; //digital enable
 
 }
-void UART1Init(){
+void UART1Init(void){
 	SYSCTL_RCGCUART_R |= 0x02;
 	SYSCTL_RCGCGPIO_R |= 0x02;
 	
@@ -29,7 +29,7 @@ void UART1Init(){
 	UART1_CTL_R = 0X0301 ; //uart enable , rx enable , tx enable
 	GPIO_PORTB_DEN_R |= 0X03; //digital enable
 
-  GPIO_PORTB_AMSEL_R &= ~0x03; //clear analog mode
+    GPIO_PORTB_AMSEL_R &= ~0x03; //clear analog mode
 	GPIO_PORTB_AFSEL_R |= 0x03; //set alternate function 
 	GPIO_PORTB_PCTL_R = (GPIO_PORTB_PCTL_R &= ~0xFF) | 0X00000011; //clear PB0 and PB1 then set them as uart
 	
@@ -37,7 +37,6 @@ void UART1Init(){
 
 uint8_t UART1_AVAILABLE(void){
 		return (((UART1_FR_R & UART_FR_RXFE)) == UART_FR_RXFE) ? 0:1 ;
-
 }
 
 uint8_t UART1_read(void){
@@ -45,15 +44,15 @@ uint8_t UART1_read(void){
 	return (UART1_DR_R & 0xFF);
 }
 
-void UART1_write(uint8_t c){
+void UART1_write(char c){
 	while ((UART1_FR_R & UART_FR_TXFF ) == UART_FR_TXFF){};
 	UART0_DR_R = c;
-
+	
 }
 
-void UART1_readstr(uint8_t *str){
+void UART1_readstr(char* str){
 	uint8_t i;
-	uint8_t c;
+	char c;
 	for ( i = 0; i < 83 ; i++)
 	{
 		c=UART1_read();
@@ -61,9 +60,10 @@ void UART1_readstr(uint8_t *str){
 		str[i]=c;
 		UART1_write(c);
 	}
-
 }
-void UART1_writestr(uint8_t *str){
+
+
+void UART1_writestr(char* str){
 
 	while(*str){
 		UART1_write(*str);

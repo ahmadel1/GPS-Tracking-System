@@ -30,10 +30,12 @@ int calculate_checksum (char gprmc_str[]){
 }
 
 bool valid_checksum (char gprmc_str[]){
-    char checksum[2];
+    int actual_checksum;
+		int calculated_checksum;			
+		char checksum[2];
     get_checksum(checksum, gprmc_str);
-    int actual_checksum = strtol(checksum, NULL, 16);
-    int calculated_checksum = calculate_checksum(gprmc_str);
+    actual_checksum = strtol(checksum, NULL, 16);
+    calculated_checksum = calculate_checksum(gprmc_str);
     return actual_checksum == calculated_checksum;
 
 }

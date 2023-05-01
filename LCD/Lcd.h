@@ -1,26 +1,26 @@
 #ifndef LCD_H_
 #define LCD_H_
 
-#include "tm4c123gh6pm.h"
+#include "..\tm4c123gh6pm.h"
 #include "stdint.h"
 #include "string.h"
-#include "systick.h"
+#include "..\SYSTICK\systick.h"
 #include "stdio.h"
 
 void LCD_String(char* str);
-void portbinit();
-void LCD_init();
+void portBinit(void);
+void LCD_init(void);
 void GPIO_ORDER(uint8_t E, char RS);
-void RESET_LCD();
-void GPIO_BITS_CLEAR();
+void RESET_LCD(void);
+void GPIO_BITS_CLEAR(void);
 void split(uint8_t BITS);
 void LCD_String(char* str);
+void LCD_Float(float number);
 void SEND_LCD_BYTE(uint8_t byte);
 void SEND_CHAR(char DATA);
 void LCD_CMD(uint8_t CMD);
 
-uint8_t UP;
-uint8_t LOW;
+
 
 #define ALL_ON 0XFF;
 #define ALL_OFF 0X00;
