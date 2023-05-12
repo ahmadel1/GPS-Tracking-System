@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/ac8dd8eac6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>GPS-Tracking</h1>
+    </header>
+    <button id="cbtn">Connect Port<i class="bi bi-usb-symbol"></i></button>
+    <section class="main">
+        <section class="starter">
+                <button onclick="chooseDistination(this)" id="destBtn" class="m-btn">
+                    Choose Destination
+                </button>
+                <div class="distance-select">
+                    <label for="tdist">Targeted distance:</label>
+                    <select name="" id="tdist">
+                        <option value="100">100m</option>
+                        <option value="200">200m</option>
+                        <option value="300">300m</option>
+                        <option value="400">400m</option>
+                        <option value="500">500m</option>
+                        <option value="500">600m</option>
+                        <option value="500">700m</option>
+                        <option value="500">800m</option>
+                        <option value="500">900m</option>
+                        <option value="500">1000m</option>
+                    </select>
+                </div>
+                <button onclick="setOnMap(this)" id="setOnMapBtn" class="m-btn">
+                    Set on map
+                </button> 
+            <div class="dir">
+                <button class="dir-method"><span class="material-icons">
+                    directions_walk
+                    </span></button>
+                    <button class="dir-method"><span class="material-icons">
+                        directions_car_filled
+                        </span></button>
+            </div>
+            <button id="dirBtn"><span>Get Direction</span><span class="material-icons">
+                directions
+                </span></button>
+            <button id="startBtn">Start</button>
+        </section>
+
+        <section class="inner-sec">
+            <div id="map"></div>
+            <div id="location">latitude:<span class="loc-span">30</span>longitude:<span class="loc-span">30.5</span></div>
+            <div id="destination">Destination: <span id="pinOut"></Destination:span></div>
+        </section>
+        <div class="info">
+            <div class="idiv">Moved distance <span id="distance-span">0</span></div>
+            <div class="idiv">Remaining distance <span id="remDistance-span">0</span></div>
+            <div class="idiv">Total time <span id="time-span"><span id="min">mm</span>:<span id="sec">ss</span></span></div>
+        </div>
+        <!-- <div id="pinOut">location:</div> -->
+    </section>
+
+    <div class="done" id="done-div">
+        <i class="bi bi-check2-circle"></i>
+        <h4>You have reached your destination.</h4>
+        <div class="f-info">
+            <div><span>Moved Distance: </span><span id="f-dist"></span></div>
+            <div><span>Time: </span><span id="f-time"></span></div>
+        </div>
+        <div class="f-btn">
+            <button class="done-btn" id="doneBtn"><span class="material-icons">
+                refresh
+                </span></button>
+                <button id="next-btn"><span class="material-icons">
+                    arrow_right
+                    </span></button>
+        </div>
+        
+    </div>
+    
+    <div class="x-div" id="cover">
+        
+    </div>
+
+    <script src="serialApp.js"></script>
+    <script src="map.js"></script>
+    <script src='https://www.bing.com/api/maps/mapcontrol?key=ArtTkyF0p5bHRAbITAYKbrugOSmjJzFx7rn_H3nzqyfRhkPFisi2-rE-EiWwxsVI&callback=loadMap'></script>
+        
+</body>
+</html>
+
+
+
+
+
+
+<!--<div id="gps-data">
+                <textarea name="" id="txtArea" cols="30" rows="20"></textarea>
+                <div id="location">lat:<span>30</span>long:<span>30.5</span></div>
+</div>-->
