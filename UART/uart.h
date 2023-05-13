@@ -5,14 +5,17 @@
 #include "stdint.h"
 #include "string.h"
 
-void UART1Init(void);
+void UART7Init(void);
 void UART0Init(void);
-uint8_t UART1_AVAILABLE(void);
-uint8_t UART1_read(void);
-void UART1_write(char c);
-void UART1_readstr(char* str);
-void UART1_writestr(char* str);
-
-
+uint8_t UART7_AVAILABLE(void);
+uint8_t UART7_read(void);
+void UART7_write(char c);
+void UART7_readstr(char* str);
+void UART7_writestr(char* str);
+void UART0_write(char c);
+void UART0_printf(char* str);
+void UART0_readstr(char *str);
+uint8_t UART0_read(void);
+uint8_t UART0_AVAILABLE(void);
 
 #endif
