@@ -12,6 +12,8 @@ In addition to the GPS system, a web app has been created that reads data from t
 #### LCD Display
 
 An LCD has been added to the system to provide additional information to the user about the distance traveled and the current state of the system. The LCD displays the distance traveled by the user and the current state of the system, which is indicated by the built-in LEDs. The distance traveled is calculated by the GPS subsystem, and the current state of the system is determined by the distance from the destination point. The LCD display enhances the user experience by providing real-time information about the system.
+<div style="text-align:center;"><img src="https://github.com/ahmadel1/GPS-Tracking-System/assets/73443649/7155fe39-da9a-407f-b6ca-a644ecc60ed0" style="width:50%;" /></div>
+
 
 
 ## LED Indicators
