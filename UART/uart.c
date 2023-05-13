@@ -29,8 +29,7 @@ void UART7Init(void){
 	UART7_LCRH_R |= 0x70 ; //fifo enable and width  8 bits
 	UART7_CTL_R = 0X0301 ; //uart enable , rx enable , tx enable
 	GPIO_PORTE_DEN_R |= 0X03; //digital enable
-
-    GPIO_PORTE_AMSEL_R &= ~0x03; //clear analog mode
+	GPIO_PORTE_AMSEL_R &= ~0x03; //clear analog mode
 	GPIO_PORTE_AFSEL_R |= 0x03; //set alternate function 
 	GPIO_PORTE_PCTL_R = (GPIO_PORTE_PCTL_R &= ~0xFF) | 0X00000011; //clear PE0 and PE1 then set them as uart
 	
@@ -72,7 +71,7 @@ void UART7_readstr(char* str){
 		c=UART7_read();
 		if (c== '\n' || c == '\r') break;
 		str[i]=c;
-		//UART1_write(c);
+		
 	}*/
 	while(1){
 		c=UART7_read();
@@ -99,7 +98,7 @@ void UART0_readstr(char* str){
 		c=UART7_read();
 		if (c== '\n' || c == '\r') break;
 		str[i]=c;
-		//UART1_write(c);
+		
 	}*/
 	while(1){
 		c=UART0_read();
