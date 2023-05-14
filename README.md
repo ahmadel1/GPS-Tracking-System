@@ -48,6 +48,22 @@ Tiva  LaunchPad->>GPS  Module: Retrieve GPS data
 Tiva  LaunchPad->>Laptop: Send end point GPS data
 Laptop->>Website: Display end point GPS data
 ```
+## Testing the Accuracy and Efficiency
+To test the accuracy and effectiveness of our web app, we compared it to Google Maps. Both our web app and Google Maps were used to navigate to a specific destination point and were found to provide accurate directions and display the user's location on the map.
+
+![test](https://github.com/ahmadel1/GPS-Tracking-System/assets/73443649/97612326-7487-4dd0-8fb8-fd4f03c5f2ac)
+
+
+## Language and Tools Used
+The following programming languages and tools were used in the development of the GPS Tracking System:
+
+1. C programming language for microcontroller code development using Keil 4
+2. HTML, CSS, and JavaScript for the web app development
+3. Microsoft Bing Maps API for the map and navigation features
+4. Tiva TM4C123G LaunchPad
+5. GPS neo 6 module for retrieving GPS data
+6. LCD for displaying information
+
 
 ## Credits
 
