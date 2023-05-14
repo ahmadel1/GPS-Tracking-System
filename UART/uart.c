@@ -61,3 +61,54 @@ void UART0_write(char c){
 	UART0_DR_R = c;
 	
 }
+
+
+
+void UART7_readstr(char* str){
+	int i=0;
+	char c;
+	
+	/*for ( i = 0; i < maxlen ; i++){   
+		c=UART7_read();
+		if (c== '\n' || c == '\r') break;
+		str[i]=c;
+		
+	}*/
+	while(1){
+		c=UART7_read();
+		if (c== '\n' || c == '\r') break;
+		str[i]=c;
+		i++;
+	}
+}
+
+
+void UART0_printf(char* str){
+
+	while(*str){
+		UART0_write(*str);
+		str++;
+	}
+}
+
+void UART0_readstr(char* str){
+	int i=0;
+	char c;
+	
+	/*for ( i = 0; i < maxlen ; i++){   
+		c=UART7_read();
+		if (c== '\n' || c == '\r') break;
+		str[i]=c;
+		
+	}*/
+	while(1){
+		c=UART0_read();
+		if (c== ' ' || c == '\r') break;
+		str[i]=c;
+		i++;
+	}
+}
+
+
+
+
