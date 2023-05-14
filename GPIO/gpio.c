@@ -38,17 +38,19 @@ void RGBclear(void){
 	GPIO_PORTF_DATA_R &= ~0x0E;
 }
 
-
+uint8_t RGBvalue(void){
+  return (GPIO_PORTF_DATA_R & 0x0E);
+}
 
 // Update RGB LED color based on remaining distance
-void Currentstate(float distance){
-    if(distance <= 1){
+void currentState(float remaining_distance){
+    if((remaining_distance <= 1) && (RGBvalue != GREEN)){
 		RGBclear();
         RGBset(GREEN);
-    }else if(distance<=5){
+    }else if((remaining_distance<=5) && (RGBvalue != YELLOW)){
 		RGBclear();
         RGBset(YELLOW);
-    }else{
+    }else if (RGBvalue != RED){
 		RGBclear();
         RGBset(RED);  
     } 
