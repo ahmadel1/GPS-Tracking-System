@@ -9,6 +9,9 @@ This project aims to develop a GPS system using TM4C123G LaunchPad to store the 
 
 In addition to the GPS system, a web app has been created that reads data from the GPS module and connects to a map API to provide the user with a map and navigation experience. The web app allows the user to input their destination point and receive real-time directions to navigate to the destination. The web app also displays the user's current location on the map, making it easier for the user to track their progress.
 
+![image](https://github.com/ahmadel1/GPS-Tracking-System/assets/73443649/760961a9-ddb5-4f81-80c1-b31829f99d34)
+
+
 ### 2. LCD Display
 
 An LCD has been added to the system to provide additional information to the user about the distance traveled and the current state of the system. The LCD displays the distance traveled by the user and the current state of the system, which is indicated by the built-in LEDs. The distance traveled is calculated by the GPS subsystem, and the current state of the system is determined by the distance from the destination point. The LCD display enhances the user experience by providing real-time information about the system.
