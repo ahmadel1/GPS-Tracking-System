@@ -12,6 +12,7 @@
 void RGBInit (void);
 void RGBset (uint8_t color);
 void RGBclear(void);
-void currentState(float distance);
+uint8_t RGBvalue(void);
+void currentState(float remaining_distance);
 
 #endif
